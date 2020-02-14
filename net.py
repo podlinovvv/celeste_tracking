@@ -107,6 +107,7 @@ class Net(nn.Module):
         x = self.norm9(F.elu(self.fc3(x)))
         x = self.drop05(x)
         x = self.fc4(x)
+        x = F.softmax(x, dim=1)
         return x
 
 # Создаём экземпляр класса сети
